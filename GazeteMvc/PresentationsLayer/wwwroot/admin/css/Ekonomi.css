@@ -1,0 +1,356 @@
+﻿/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8fafc;
+    color: #1a202c;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Market Ticker styles */
+.market-summary {
+    background: #1a202c;
+    margin: -20px -20px 20px -20px;
+    padding: 12px 0;
+    overflow: hidden;
+}
+
+.market-ticker {
+    position: relative;
+}
+
+.ticker-items {
+    display: flex;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: white;
+}
+
+    .ticker-item.up .change {
+        color: #48bb78;
+    }
+
+    .ticker-item.down .change {
+        color: #f56565;
+    }
+
+    .ticker-item .symbol {
+        font-weight: bold;
+        margin-right: 12px;
+    }
+
+    .ticker-item .value {
+        margin-right: 8px;
+    }
+
+/* Main Slider styles */
+.main-slider {
+    margin-bottom: 40px;
+}
+
+.slider-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.slide:hover .slide-content {
+    transform: translateY(-10px);
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #3182ce;
+    color: white;
+    border-radius: 16px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.slide-content h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* Market Analysis styles */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #2d3748;
+    position: relative;
+    padding-left: 12px;
+}
+
+    .section-title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #3182ce;
+        border-radius: 2px;
+    }
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.analysis-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .analysis-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.card-header {
+    padding: 16px;
+    background: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.chart-container {
+    width: 60px;
+    height: 40px;
+    position: relative;
+}
+
+.mini-chart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+    .mini-chart::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+    }
+
+    .mini-chart.up::before {
+        background: #48bb78;
+    }
+
+    .mini-chart.down::before {
+        background: #f56565;
+    }
+
+    .mini-chart::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .mini-chart.up::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M0 60 L20 40 L40 45 L60 20 L80 30 L100 0' stroke='%2348bb78' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    .mini-chart.down::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M0 0 L20 20 L40 15 L60 40 L80 30 L100 60' stroke='%23f56565' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+.market-name {
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+    .card-content h3 {
+        margin-bottom: 8px;
+        color: #2d3748;
+    }
+
+    .card-content p {
+        color: #4a5568;
+        margin-bottom: 16px;
+    }
+
+.read-more {
+    background: none;
+    border: none;
+    color: #3182ce;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+    .read-more:hover {
+        color: #2c5282;
+        transform: translateX(5px);
+    }
+
+/* Latest News styles */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.news-image {
+    position: relative;
+    height: 200px;
+}
+
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-image .category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #3182ce;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+.news-content {
+    padding: 16px;
+}
+
+    .news-content h3 {
+        margin-bottom: 8px;
+        color: #2d3748;
+    }
+
+    .news-content p {
+        color: #4a5568;
+        margin-bottom: 12px;
+    }
+
+time {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 300px;
+    }
+
+    .slide-content {
+        padding: 20px;
+    }
+
+        .slide-content h2 {
+            font-size: 20px;
+        }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .analysis-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}

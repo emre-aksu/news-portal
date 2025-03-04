@@ -9,10 +9,15 @@
   <ItemGroup>
     <Folder Include="Areas\GazetePanel\Data\" />
     <Folder Include="Areas\GazetePanel\Models\" />
+    <Folder Include="wwwroot\ekonomiImages\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelLayer\ModelLayer.csproj" />
   </ItemGroup>
 
 </Project>
