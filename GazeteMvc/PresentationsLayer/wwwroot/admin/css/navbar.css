@@ -1,71 +1,46 @@
-﻿/* Genel Stil Ayarları */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-/* Navbar Stilleri */
+﻿/* Navbar styles */
 .navbar {
-    background-color: #800000; /* Bordo renk */
-    color: white;
-    padding: 20px 20px;
+    background-color: #1a202c;
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.navbar-container {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 64px;
 }
 
-.navbar-logo {
-    font-size: 1.9rem;
-    font-weight: bold;
-    text-decoration: none;
+.logo {
     color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-.navbar-menu {
-    list-style: none;
+.nav-links {
     display: flex;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
-    .navbar-menu li {
-        margin-left: 20px;
-    }
-
-    .navbar-menu a {
+    .nav-links a {
+        color: #cbd5e0;
         text-decoration: none;
-        color: white;
-        font-size: 1rem;
-        padding: 8px 14px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
     }
 
-        .navbar-menu a:hover {
-            background-color: white;
-            color: #800000; /* Bordo */
-            border-radius: 5px;
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: #2d3748;
+            color: white;
+            transform: translateY(-2px);
         }
-
-/* İçerik Stili */
-.content {
-    margin-top: 80px; /* Navbar'ın kapattığı alan kadar boşluk bırak */
-    padding: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1 {
-    color: #800000; /* Bordo */
-}

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+    <link href="~/admin/css/navbar.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -42,33 +43,23 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a href="#" class="navbar-logo">Önsöz Gazetesi</a>
-                <ul class="navbar-menu">
-                    <li>
-                        <!-- burada hrefe yönlendirme verirken program cs deki bu kısıma göre veriyoruz admin onu temsil ediyor burada değişebilir  pattern: "/admin/{controller=Bedelsiz}/{action=List}/{id?}"); -->
-                        <a href="/players/Bedelsiz/List">Ekonomi</a>
-                    </li>
-                    <li>
-                        <a href="#transfer-soylentileri">Gündem</a>
-                    </li>
-                    <li>
-                        <a href="#transfer-soylentileri">Spor</a>
-                    </li>
-                    <li>
-                        <a href="#transfer-soylentileri">Resmi İlanlar</a>
-                    </li>
-                    <li>
-                        <a href="#transfer-soylentileri">Önsöz Özel</a>
-                    </li>
-                    <li>
-                        <a href="#transfer-soylentileri">Menü</a>
-                    </li>
-                   
+         <nav class="navbar">
+            <div class="nav-container">
+                <div style="padding-right:500px;" class="logo">ANASAYFA</div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Ana Sayfa</a></li>
+                    <li><a href="#">Gündem</a></li>
+                    <li><a href="#">Spor</a></li>
+                    <li><a href="#">Ekonomi</a></li>
+                    <li><a href="#">Teknoloji</a></li>
                 </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </nav>
+        </nav> 
 
 
     </body>

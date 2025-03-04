@@ -3,11 +3,10 @@
 namespace PresentationsLayer.Areas.GazetePanel.Controllers
 {
     [Area("GazetePanel")]
-    public class DenemeController : Controller
+    public class HomeController : Controller
     {
-        [HttpGet]   
+        [HttpGet]
         public IActionResult List()
-        
         {
             return View();
         }

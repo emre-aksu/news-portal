@@ -1,0 +1,351 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haber Portalı</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="~/admin/css/stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+  
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/news1.jpg" alt="Haber 1" data-src="https://picsum.photos/800/400?random=1">
+                <div class="slide-content">
+                    <h2>Önemli Ekonomik Gelişmeler</h2>
+                    <p>Ekonomide son dakika gelişmeleri...</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/news2.jpg" alt="Haber 2" data-src="https://picsum.photos/800/400?random=2">
+                <div class="slide-content">
+                    <h2>Spor Dünyasından Haberler</h2>
+                    <p>Sporda günün öne çıkan gelişmeleri...</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/news3.jpg" alt="Haber 3" data-src="https://picsum.photos/800/400?random=3">
+                <div class="slide-content">
+                    <h2>Teknoloji Dünyasının Yenilikleri</h2>
+                    <p>Teknoloji dünyasından son haberler...</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev">❮</button>
+        <button class="slider-btn next">❯</button>
+        <div class="slider-dots"></div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <div class="news-card" data-category="bilim">
+            <img src="images/news4.jpg" alt="Haber 4" data-src="https://picsum.photos/400/300?random=4">
+            <div class="news-content">
+                <span class="category">Bilim</span>
+                <h3>Bilim Dünyasından Yeni Keşif</h3>
+                <p>Bilim insanları yeni bir gezegen keşfetti...</p>
+                <button class="read-more" data-id="1">Devamını Oku →</button>
+            </div>
+        </div>
+        <div class="news-card" data-category="kultur">
+            <img src="images/news5.jpg" alt="Haber 5" data-src="https://picsum.photos/400/300?random=5">
+            <div class="news-content">
+                <span class="category">Kültür-Sanat</span>
+                <h3>Kültür Sanat Etkinlikleri</h3>
+                <p>Bu hafta sonu gerçekleşecek etkinlikler...</p>
+                <button class="read-more" data-id="2">Devamını Oku →</button>
+            </div>
+        </div>
+        <div class="news-card" data-category="saglik">
+            <img src="images/news6.jpg" alt="Haber 6" data-src="https://picsum.photos/400/300?random=6">
+            <div class="news-content">
+                <span class="category">Sağlık</span>
+                <h3>Sağlık Bakanlığından Açıklama</h3>
+                <p>Sağlık Bakanı'ndan önemli açıklamalar...</p>
+                <button class="read-more" data-id="3">Devamını Oku →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- League Standings -->
+    <div class="standings-container">
+        <div class="standings-title">Süper Lig Puan Durumu</div>
+        <table class="standings-table">
+            <thead>
+                <tr>
+                    <th>Sıra</th>
+                    <th>Takım</th>
+                    <th>O</th>
+                    <th>G</th>
+                    <th>B</th>
+                    <th>M</th>
+                    <th>A</th>
+                    <th>Y</th>
+                    <th>AV</th>
+                    <th>P</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th> <img style="width:31px;" src="~/admin/images/galatasaray.png" />Galatasaray</th>
+                    <th>25</th>
+                    <th>20</th>
+                    <th>5</th>
+                    <th>0</th>
+                    <th>36</th>
+                    <th>0</th>
+                    <th>40</th>
+                    <th>61</th>
+                </tr>
+                <tr>
+
+
+                    <th>2</th>
+                    <th><img style="width:31px;" src="~/admin/images/fener.png" /> Fenerbahçe</th>
+                    <th>25</th>
+                    <th>19</th>
+                    <th>5</th>
+                    <th>2</th>
+                    <th>36</th>
+                    <th>6</th>
+                    <th>32</th>
+                    <th>57</th>
+                </tr>
+                <tr>
+
+
+                    <th>3</th>
+                    <th><img style="width:31px;" src="~/admin/images/samsun.png" /> SamsunSpor</th>
+                    <th>25</th>
+                    <th>19</th>
+                    <th>5</th>
+                    <th>2</th>
+                    <th>36</th>
+                    <th>6</th>
+                    <th>13</th>
+                    <th>47</th>
+                </tr>
+                <tr>
+
+
+                    <th>4</th>
+                    <th><img style="width:31px;" src="~/admin/images/bjk.png" /> Bekiştaş</th>
+                    <th>25</th>
+                    <th>14</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>13</th>
+                    <th>6</th>
+                    <th>15</th>
+                    <th>44</th>
+                </tr>
+            </thead>
+            <tbody id="standings-body">
+                <!-- Table rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2024 HaberPortal. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : '';
+            spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(6px, -6px)' : '';
+        });
+
+        // Slider functionality
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dotsContainer = document.querySelector('.slider-dots');
+
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        // Function to update slide position
+        function updateSlide() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Add fade in animation to current slide content
+            slides.forEach((slide, index) => {
+                const content = slide.querySelector('.slide-content');
+                if (index === currentSlide) {
+                    content.classList.add('animate-fadeIn');
+                } else {
+                    content.classList.remove('animate-fadeIn');
+                }
+            });
+        }
+
+        // Function to go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // Next slide function
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateSlide();
+        }
+
+        // Previous slide function
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateSlide();
+        }
+
+        // Event listeners for buttons
+        nextBtn?.addEventListener('click', nextSlide);
+        prevBtn?.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Pause auto slide on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer?.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        sliderContainer?.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Add touch support for mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider?.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            clearInterval(slideInterval);
+        });
+
+        slider?.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const difference = touchStartX - touchEndX;
+
+            if (Math.abs(difference) > swipeThreshold) {
+                if (difference > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Read More button functionality
+        const readMoreButtons = document.querySelectorAll('.read-more');
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const newsId = button.getAttribute('data-id');
+                // You can implement the navigation to the full news page here
+                console.log(`Navigating to news with ID: ${newsId}`);
+            });
+        });
+
+        // Add lazy loading for images
+        const images = document.querySelectorAll('img[data-src]');
+        const imageOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px 50px 0px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        }, imageOptions);
+
+        images.forEach(img => imageObserver.observe(img));
+
+       
+        const standingsBody = document.getElementById('standings-body');
+
+        if (standingsBody) {
+            standings.forEach(team => {
+                const row = document.createElement('tr');
+
+                // Add appropriate class based on position
+                if (team.position <= 2) {
+                    row.classList.add('champions-league');
+                } else if (team.position <= 4) {
+                    row.classList.add('europa-league');
+                } else if (team.position >= 16) {
+                    row.classList.add('relegation');
+                }
+
+                row.innerHTML = `
+                    <td class="position">${team.position}</td>
+                    <td>
+                        <div class="team-cell">
+                            <img src="${team.logo}" alt="${team.team}" class="team-logo">
+                            <span class="team-name">${team.team}</span>
+                        </div>
+                    </td>
+                    <td>${team.played}</td>
+                    <td>${team.won}</td>
+                    <td>${team.drawn}</td>
+                    <td>${team.lost}</td>
+                    <td>${team.goalsFor}</td>
+                    <td>${team.goalsAgainst}</td>
+                    <td>${team.goalsFor - team.goalsAgainst}</td>
+                    <td><strong>${team.points}</strong></td>
+                `;
+
+                standingsBody.appendChild(row);
+            });
+        }
+    });
+</script>

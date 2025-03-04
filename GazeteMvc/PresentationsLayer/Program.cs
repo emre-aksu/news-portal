@@ -23,7 +23,7 @@ app.UseAuthorization();
 app.MapAreaControllerRoute(
                name: "adminPanelDefault",
                areaName: "GazetePanel",
-               pattern: "/gazete/{controller=Deneme}/{action=List}/{id?}");
+               pattern: "/gazete/{controller=Home}/{action=List}/{id?}");
 
 
 

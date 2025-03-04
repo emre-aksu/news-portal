@@ -1,0 +1,383 @@
+﻿/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+}
+
+
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Slider styles */
+.slider-container {
+    margin-top: 64px;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.slide:hover .slide-content {
+    transform: translateY(-10px);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* News Grid styles */
+.news-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 16px;
+}
+
+.category {
+    background: #3182ce;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover .category {
+    background: #2c5282;
+}
+
+.news-content h3 {
+    margin: 12px 0;
+    font-size: 20px;
+    color: #2d3748;
+}
+
+.news-content p {
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.read-more {
+    background: none;
+    border: none;
+    color: #3182ce;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+.read-more:hover {
+    color: #2c5282;
+    transform: translateX(5px);
+}
+
+/* Footer styles */
+footer {
+    background-color: #1a202c;
+    color: white;
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+}
+
+/* League Standings Table styles */
+.standings-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.standings-title {
+    background: #1a202c;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.standings-table th:nth-child(1) { width: 5%; }  /* Sıra */
+.standings-table th:nth-child(2) { width: 35%; } /* Takım */
+.standings-table th:nth-child(n+3) { width: 6%; text-align: center; } /* Diğer sütunlar */
+.standings-table td:nth-child(n+3) { text-align: center; }
+
+.standings-table th {
+    background: #f7fafc;
+    font-weight: bold;
+    color: #4a5568;
+    white-space: nowrap;
+}
+
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.team-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.position {
+    font-weight: bold;
+    color: #2d3748;
+    width: 30px;
+}
+
+.champions-league {
+    border-left: 4px solid #48bb78;
+}
+
+.europa-league {
+    border-left: 4px solid #4299e1;
+}
+
+.relegation {
+    border-left: 4px solid #f56565;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #1a202c;
+        padding: 20px;
+    }
+    
+    .nav-links.active li {
+        margin: 10px 0;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .slider-container {
+        height: 300px;
+    }
+
+    .standings-container {
+        margin: 20px auto;
+        padding: 0;
+    }
+
+    .standings-table {
+        font-size: 14px;
+    }
+
+    .standings-table th,
+    .standings-table td {
+        padding: 8px 4px;
+    }
+
+    .standings-table th:nth-child(1) { width: 8%; }  /* Sıra */
+    .standings-table th:nth-child(2) { width: 30%; } /* Takım */
+    .standings-table th:nth-child(n+3) { width: 7%; }
+
+    .team-cell {
+        gap: 8px;
+        min-width: 120px;
+    }
+
+    .team-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .team-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .standings-table th:nth-child(6),
+    .standings-table th:nth-child(7),
+    .standings-table th:nth-child(8),
+    .standings-table td:nth-child(6),
+    .standings-table td:nth-child(7),
+    .standings-table td:nth-child(8) {
+        display: none;
+    }
+
+    .standings-table th:nth-child(2) { width: 40%; }
+    .standings-table th:nth-child(n+3) { width: 10%; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+} 
+} 
